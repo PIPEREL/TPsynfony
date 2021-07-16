@@ -1,0 +1,17 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    globals: 
+        app_name: 'SUBLIMMO'
+        copyright: 'Copyright © 2021 - PIPEREL Bastien'
+        contact_address: '12 rue Alfred de Vigny'
+        contact_zip: 91330
+        contact_city: 'YERRES'
+        contact_phone : '06.49.21.95.77'
+        contact_email : 'bastienpiperel@gmail.com'
+        contact_name : 'PIPEREL'
+        contact_surname : 'Bastien'
+    form_themes : ['bootstrap_5_layout.html.twig']
+
+when@test:
+    twig:
+        strict_variables: true

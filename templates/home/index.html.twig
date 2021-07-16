@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %} {% block title %} Mon portfolio {% endblock %} {% block body %}
+
+<div>
+    <h1>{{contact_name}} {{contact_surname}} </h1>
+    <h2>Développeur Web et Web Mobile</h2>
+    <div class="row my-5">
+
+        <h2>Compétences</h2>
+        <div class="col-3 offset-1">
+
+            <h2>technologie</h2>
+            <ul>
+                {% for technologie in technologies %}
+                <li>{{technologie.img}}-{{ technologie.name }}</li>
+
+                {% else %}
+                <li>no records found</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-3 offset-1 ">
+            <h2>Framework</h2>
+            <ul>
+                {% for aframe in Framework %}
+                <li>{{aframe.img}}-{{ aframe.name }}</li>
+
+                {% else %}
+                <li>no framework found</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-3 offset-1">
+            <h2>CMS</h2>
+            <ul>
+                {% for acms in Cms %}
+                <li>{{acms.img}}-{{ acms.name }}</li>
+
+                {% else %}
+                <li>no Cms found</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+
+
+    <h2>à propos</h2>
+    <p>{{text.texte}}</p>
+
+    <h2>Contact</h2>
+
+    {{form_start(contactForm)}}
+    <div class="row my-5">
+        <div class="col-3 offset-3">
+            {{form_label(contactForm.Nom)}} {{form_widget(contactForm.Nom)}}
+        </div>
+        <div class="col-3">
+            {{form_label(contactForm.Prenom)}} {{form_widget(contactForm.Prenom)}}
+        </div>
+        <div class="col-6 offset-3 mb-3">
+            {{form_label(contactForm.email)}} {{form_widget(contactForm.email)}}
+        </div>
+        <div class="col-6 offset-3 mb-3">
+            {{form_label(contactForm.message)}} {{form_widget(contactForm.message)}}{{form_help(contactForm.message)}}
+        </div>
+        <div class="col-6 offset-3 mb-3">
+            {{form_label(contactForm.fichier)}} {{form_widget(contactForm.fichier)}}{{form_help(contactForm.fichier)}}
+        </div>
+        <div class="col-6 offset-3 mb-3 d-flex flex-row-reverse">
+            {{form_widget(contactForm.envoyer)}}
+        </div>
+    </div>
+    {{form_end(contactForm)}}
+</div>
+{% endblock %}
